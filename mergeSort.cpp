@@ -55,12 +55,16 @@ void merge(int a[],int begin,int mid,int end)
     for(int i = begin;i<end+1;i++){
         if(temp1[k]<=temp2[j]){
             a[i] = temp1[k];
-            k++;
+            if(temp1[k]!=INT_MAX &&  temp2[j]==INT_MAX){
+                count+= j-1 ;
+            }
+            k++; 
         }else{
             a[i] = temp2[j];
-            j++;
-            if(!(temp2[j]==INT_MAX))
+            if(temp2[j]!= INT_MAX){
                 count++;
+            }
+            j++;
         }
     }
     
