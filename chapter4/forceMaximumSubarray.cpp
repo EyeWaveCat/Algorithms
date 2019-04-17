@@ -12,7 +12,7 @@ struct MaximumSubarray
 
 void generateArray(int a[],int size);
 void printArray(int a[],int size);
-MaximumSubarray findMaximumSubarray(int a[],int size);
+MaximumSubarray forceMaximumSubarray(int a[],int size);
 
 
 int main(void)
@@ -22,12 +22,12 @@ int main(void)
     int length = sizeof(array) / sizeof(array[0]);
     generateArray(array,length);
     printArray(array,length);
-    MaximumSubarray sa = findMaximumSubarray(array,length);
+    MaximumSubarray sa = forceMaximumSubarray(array,length);
     cout<<"("<<sa.begin<<","<<sa.end<<")"<<":"<<sa.sum<<endl;
     return 0;
 }
 
-MaximumSubarray findMaximumSubarray(int a[],int size)
+MaximumSubarray forceMaximumSubarray(int a[],int size)
 {
     MaximumSubarray sa;
     int sum = INT_MIN;
